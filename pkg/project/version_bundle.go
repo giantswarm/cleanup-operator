@@ -14,7 +14,7 @@ func NewVersionBundle() versionbundle.Bundle {
 			},
 		},
 		Components: []versionbundle.Component{},
-		Name:       "template-operator",
+		Name:       "cleanup-operator",
 		Version:    BundleVersion(),
 	}
 }

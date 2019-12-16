@@ -2,6 +2,6 @@ FROM alpine:3.10
 
 RUN apk add --no-cache ca-certificates
 
-ADD ./template-operator /template-operator
+ADD ./cleanup-operator /cleanup-operator
 
-ENTRYPOINT ["/template-operator"]
+ENTRYPOINT ["/cleanup-operator"]
