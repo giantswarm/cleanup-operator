@@ -2,7 +2,7 @@ package project
 
 var (
 	bundleVersion = "0.0.1"
-	description   = "The template-operator does something."
+	description   = "An operator that disposes of any evidence of test stuff in your cluster."
 	gitSHA        = "n/a"
 	name          = "cleanup-operator"
 	source        = "https://github.com/giantswarm/cleanup-operator"

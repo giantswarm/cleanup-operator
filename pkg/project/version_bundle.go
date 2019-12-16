@@ -8,8 +8,8 @@ func NewVersionBundle() versionbundle.Bundle {
 	return versionbundle.Bundle{
 		Changelogs: []versionbundle.Changelog{
 			{
-				Component:   "template-operator",
-				Description: "TODO",
+				Component:   "cleanup-operator",
+				Description: "An operator that disposes of any evidence of test stuff in your cluster",
 				Kind:        versionbundle.KindChanged,
 			},
 		},
