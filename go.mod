@@ -19,6 +19,7 @@ require (
 	github.com/imdario/mergo v0.3.8 // indirect
 	github.com/juju/errgo v0.0.0-20140925100237-08cceb5d0b53 // indirect
 	github.com/patrickmn/go-cache v2.1.0+incompatible // indirect
+	github.com/prometheus/client_golang v0.9.3
 	github.com/spf13/viper v1.6.1
 	k8s.io/api v0.16.4
 	k8s.io/apiextensions-apiserver v0.16.4 // indirect
