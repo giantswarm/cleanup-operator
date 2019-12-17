@@ -13,19 +13,19 @@ import (
 	"github.com/giantswarm/cleanup-operator/pkg/project"
 )
 
-type TODOConfig struct {
+type CleanerConfig struct {
 	K8sClient k8sclient.Interface
 	Logger    micrologger.Logger
 }
 
-type TODO struct {
+type Cleaner struct {
 	*controller.Controller
 }
 
-func NewTODO(config TODOConfig) (*TODO, error) {
+func NewCleaner(config CleanerConfig) (*Cleaner, error) {
 	var err error
 
-	resourceSets, err := newTODOResourceSets(config)
+	resourceSets, err := newCleanerResourceSets(config)
 	if err != nil {
 		return nil, microerror.Mask(err)
 	}
@@ -53,24 +53,24 @@ func NewTODO(config TODOConfig) (*TODO, error) {
 		}
 	}
 
-	c := &TODO{
+	c := &Cleaner{
 		Controller: operatorkitController,
 	}
 
 	return c, nil
 }
 
-func newTODOResourceSets(config TODOConfig) ([]*controller.ResourceSet, error) {
+func newCleanerResourceSets(config CleanerConfig) ([]*controller.ResourceSet, error) {
 	var err error
 
 	var resourceSet *controller.ResourceSet
 	{
-		c := todoResourceSetConfig{
+		c := cleanerResourceSetConfig{
 			K8sClient: config.K8sClient,
 			Logger:    config.Logger,
 		}
 
-		resourceSet, err = newTODOResourceSet(c)
+		resourceSet, err = newCleanerResourceSet(c)
 		if err != nil {
 			return nil, microerror.Mask(err)
 		}

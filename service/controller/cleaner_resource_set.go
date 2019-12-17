@@ -12,12 +12,12 @@ import (
 	"github.com/giantswarm/cleanup-operator/service/controller/resource/test"
 )
 
-type todoResourceSetConfig struct {
+type cleanerResourceSetConfig struct {
 	K8sClient k8sclient.Interface
 	Logger    micrologger.Logger
 }
 
-func newTODOResourceSet(config todoResourceSetConfig) (*controller.ResourceSet, error) {
+func newCleanerResourceSet(config cleanerResourceSetConfig) (*controller.ResourceSet, error) {
 	var err error
 
 	var testResource resource.Interface
