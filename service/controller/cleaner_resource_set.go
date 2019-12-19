@@ -9,7 +9,7 @@ import (
 	"github.com/giantswarm/operatorkit/resource/wrapper/metricsresource"
 	"github.com/giantswarm/operatorkit/resource/wrapper/retryresource"
 
-	"github.com/giantswarm/cleanup-operator/service/controller/resource/test"
+	"github.com/giantswarm/cleanup-operator/service/controller/resource/app"
 )
 
 type cleanerResourceSetConfig struct {
@@ -20,21 +20,21 @@ type cleanerResourceSetConfig struct {
 func newCleanerResourceSet(config cleanerResourceSetConfig) (*controller.ResourceSet, error) {
 	var err error
 
-	var testResource resource.Interface
+	var appResource resource.Interface
 	{
-		c := test.Config{
+		c := app.Config{
 			K8sClient: config.K8sClient,
 			Logger:    config.Logger,
 		}
 
-		testResource, err = test.New(c)
+		appResource, err = app.New(c)
 		if err != nil {
 			return nil, microerror.Mask(err)
 		}
 	}
 
 	resources := []resource.Interface{
-		testResource,
+		appResource,
 	}
 
 	{

@@ -1,4 +1,4 @@
-package test
+package app
 
 import (
 	"github.com/giantswarm/microerror"

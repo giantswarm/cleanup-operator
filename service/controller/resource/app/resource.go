@@ -1,4 +1,4 @@
-package test
+package app
 
 import (
 	"github.com/giantswarm/k8sclient"
@@ -7,7 +7,7 @@ import (
 )
 
 const (
-	Name = "todo"
+	Name = "app"
 )
 
 type Config struct {
