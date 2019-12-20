@@ -16,16 +16,21 @@ type Config struct {
 }
 
 type Resource struct {
-	logger micrologger.Logger
+	k8sclient k8sclient.Interface
+	logger    micrologger.Logger
 }
 
 func New(config Config) (*Resource, error) {
+	if config.K8sClient == nil {
+		return nil, microerror.Maskf(invalidConfigError, "%T.K8sClient must not be empty", config)
+	}
 	if config.Logger == nil {
 		return nil, microerror.Maskf(invalidConfigError, "%T.Logger must not be empty", config)
 	}
 
 	r := &Resource{
-		logger: config.Logger,
+		k8sclient: config.K8sClient,
+		logger:    config.Logger,
 	}
 
 	return r, nil
