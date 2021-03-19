@@ -50,7 +50,7 @@ func ToApp(v interface{}) (v1alpha1.App, error) {
 func TTL(obj LabelsGetter) time.Duration {
 	t, err := time.ParseDuration(obj.GetLabels()[TTLLabel])
 	if err != nil {
-		return 28800000000000
+		return 8 * time.Hour
 	}
 	return t
 }
