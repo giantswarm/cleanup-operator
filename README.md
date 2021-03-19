@@ -1,5 +1,11 @@
 [![CircleCI](https://circleci.com/gh/giantswarm/cleanup-operator.svg?&style=shield)](https://circleci.com/gh/giantswarm/cleanup-operator) [![Docker Repository on Quay](https://quay.io/repository/giantswarm/cleanup-operator/status "Docker Repository on Quay")](https://quay.io/repository/giantswarm/cleanup-operator)
 
+# 2021-03-19 Archived 🗄
+
+We've taken a different approach to cleaning up test clusters and are planning
+to use short-lived test management and workload clusters where this wouldn't be
+necessary, so we decided to archive this for now.
+
 # cleanup-operator
 
 > An operator that disposes of any evidence of test stuff in your cluster.
